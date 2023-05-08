@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 const promises = require("node:fs/promises");
 const path = require("node:path");
-async function makeCssBundle() {
+export async function makeCssBundle() {
   const sourceCssFiles = await promises.readdir(path.join(__dirname, "styles"));
   const bundle = fs.createWriteStream(
     path.join(__dirname, "project-dist", "bundle.css")
